@@ -14,3 +14,4 @@ alias d='trash-put'
 alias rm='echo "This is not the command you are looking for."; false'
 
 eval "$(zoxide init bash)" 
+export EDITOR=vim

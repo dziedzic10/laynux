@@ -76,4 +76,5 @@ systemctl enable bluetooth
 # Clean up
 rm dependencies.txt
 
-echo "Installation completed successfully!"
+echo "Installation completed successfully! rebooting in 5"
+sleep 5 && reboot
