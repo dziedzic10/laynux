@@ -1,0 +1,104 @@
+{
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["group/hardware", "pulseaudio", "backlight", "battery", "tray", "custom/power-button"],
+"hyprland/workspaces": {
+  "format": "{icon}",
+  "on-click": "activate",
+  "format-icons": {
+    "1": "",
+    "2": "",
+    "3": "3",
+    "4": "",
+    "5": ""
+  },
+  "sort-by-number": true
+},
+  "clock": {
+    "format": "{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}   {capacity}%",
+    "interval": 5,
+    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
+    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
+    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-alt": "{icon}   {time}",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
+  "network": {
+    "format-wifi": "   {essid}",
+    "format-ethernet": "󰤭   ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "  Disconnected",
+    "tooltip-format": "{ifname}:{ipaddr}/{cidr} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{ifname}:{ipaddr}/{cidr} via {gwaddr} Signal: {signalStrength}%",
+    "on-click": "nm-connection-editor"
+  },
+  "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", " "]
+      },
+      "on-click": "pavucontrol"
+  },
+  "backlight": {
+    "format": "   {percent}%",
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "on-click": "brightnessctl set +1%",
+    "on-click-right": "brightnessctl set 1%-"
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "group/hardware": {
+    "modules": [
+      "cpu",
+      "memory",
+      "disk"
+    ],
+    "orientation": "horizontal"
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "{:.0f}% ",
+    "max-length": 10,
+    "on-click": "kitty --class floating-term -e htop"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "{percentage_used}% ",
+    "path": "/"
+  },
+  "memory": {
+    "interval": 10,
+    "format": "{}% ",
+    "max-length": 10,
+    "on-click": "kitty --class floating-term -e htop"
+  },
+  "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": "<span size='13000' foreground='#89b4fa'> </span>{status}",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": " {num_connections} connected",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+  "custom/power-button": {
+    "format": "   ",
+    "on-click": "wlogout",
+    "tooltip": false
+  }
+}

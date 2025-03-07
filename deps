@@ -1,0 +1,37 @@
+sudo pacman -Syu
+
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+yay -Syu
+stow 
+synology-drive 
+hyprpaper 
+hyprlock 
+waybar 
+hypridle 
+brightnessctl 
+dunst 
+hyprshot
+ttf-font-awesome
+ttf-cascadia-code-nerd
+usbutils
+nwg-look
+pavucontrol
+nm-applet
+blueman-applet
+kdeconnect
+catppuccin-gtk-theme-mocha
+wlogout
+nautilus
+gvim
+clipse
+gwenview
+thunderbird
+hyprpicker
+imagemagick
+trash-cli
+# socat ?
+zoxide
