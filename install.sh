@@ -21,36 +21,42 @@ else
     echo "yay is already installed."
 fi
 
+yay -S stow
+stow *
+
 # List of packages to install
 cat > dependencies.txt <<EOL
-stow
-synology-drive
-hyprpaper
+hyprland-git
 hyprlock
-waybar
 hypridle
-brightnessctl
-dunst
+hyprpicker
+hyprpaper
 hyprshot
+hyprpolkitagent
+
 ttf-font-awesome
 ttf-cascadia-code-nerd
-usbutils
+catppuccin-gtk-theme-mocha
 nwg-look
+
+waybar
+nautilus
 pavucontrol
+brightnessctl
+bluez
+networkmanager
 blueman
 network-manager-applet
-kdeconnect
-catppuccin-gtk-theme-mocha
 wlogout
-nautilus
-gvim
+dunst
 clipse
-gwenview
-thunderbird
-hyprpicker
 imagemagick
+synology-drive
+kdeconnect
+thunderbird
+gparted
 trash-cli
-socat
+usbutils
 zoxide
 EOL
 
@@ -63,6 +69,9 @@ mapfile -t packages < dependencies.txt
 # Install selected packages with yay
 echo "Installing selected packages..."
 yay -S --needed "${packages[@]}"
+
+systemctl enable NetworkManager
+systemctl enable bluetooth
 
 # Clean up
 rm dependencies.txt
