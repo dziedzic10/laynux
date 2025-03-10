@@ -22,6 +22,7 @@ else
 fi
 
 yay -S stow
+cd ~/laynux
 stow *
 
 # List of packages to install
