@@ -21,11 +21,11 @@
   },
   "battery": {
     "states": {
-      "warning": 30,
+      "warning": 20,
       "critical": 10
     },
     "format": "{icon}   {capacity}%",
-    "interval": 5,
+    "interval": 1,
     "format-warning": "<span size='13000' foreground='#e06a21'>{icon}  {capacity}%</span>",
     "format-critical": "<span size='13000' foreground='#fc494f'>{icon}  {capacity}%</span>",
     "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
@@ -82,18 +82,19 @@
     "interval": 10,
     "format": "{:.0f}% ",
     "max-length": 10,
-    "on-click": "kitty --class floating-term -e htop"
+    "on-click": "kitty --class floating-term -e btop"
   },
   "disk": {
     "interval": 30,
     "format": "{percentage_used}% ",
-    "path": "/"
+    "path": "/",
+    "on-click": "kitty --class floating-term -e btop"
   },
   "memory": {
     "interval": 10,
     "format": "{}% ",
     "max-length": 10,
-    "on-click": "kitty --class floating-term -e htop"
+    "on-click": "kitty --class floating-term -e btop"
   },
   "bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system

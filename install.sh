@@ -40,6 +40,7 @@ ttf-cascadia-code-nerd
 catppuccin-gtk-theme-mocha
 nwg-look
 
+btop
 waybar
 nautilus
 pavucontrol
