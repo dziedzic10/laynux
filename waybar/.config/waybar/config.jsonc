@@ -2,7 +2,7 @@
   "position": "top",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["group/hardware", "pulseaudio", "backlight", "battery", "tray", "custom/power-button"],
+  "modules-right": ["group/hardware", "group/system", "tray", "custom/power-button"],
 "hyprland/workspaces": {
   "format": "{icon}",
   "on-click": "activate",
@@ -22,12 +22,12 @@
   "battery": {
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 10
     },
     "format": "{icon}   {capacity}%",
     "interval": 5,
-    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
-    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
+    "format-warning": "<span size='13000' foreground='#e06a21'>{icon}  {capacity}%</span>",
+    "format-critical": "<span size='13000' foreground='#fc494f'>{icon}  {capacity}%</span>",
     "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-alt": "{icon}   {time}",
@@ -44,7 +44,7 @@
     "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
-      "format": "{icon}  {volume}%",
+      "format": "  {icon}  {volume}%",
       "format-muted": "",
       "format-icons": {
           "default": ["", "", " "]
@@ -61,6 +61,14 @@
   "tray": {
     "icon-size": 21,
     "spacing": 10
+  },
+  "group/system": {
+    "modules": [
+      "pulseaudio",
+      "backlight",
+      "battery"
+    ],
+    "orientation": "horizontal"
   },
   "group/hardware": {
     "modules": [
