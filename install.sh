@@ -3,7 +3,7 @@
 set -e
 
 # Update system
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 # Install base dependencies
 echo "Installing base dependencies..."
@@ -21,62 +21,19 @@ else
     echo "yay is already installed."
 fi
 
-yay -S stow
-cd ~/laynux
-stow *
+yay -Syu stow --noconfirm
+stow $(find . -maxdepth 1 -type d -not -name "." | sed 's|^\./||')
 
-# List of packages to install
-cat > dependencies.txt <<EOL
-hyprland-git
-hyprlock
-hypridle
-hyprpicker
-hyprpaper
-hyprshot
-hyprpolkitagent
+mapfile -t packages < dep
 
-ttf-font-awesome
-ttf-cascadia-code-nerd
-catppuccin-gtk-theme-mocha
-nwg-look
+yay -S --noconfirm --needed "${packages[@]}"
 
-btop
-waybar
-nautilus
-pavucontrol
-brightnessctl
-bluez
-networkmanager
-blueman
-network-manager-applet
-wlogout
-dunst
-clipse
-imagemagick
-synology-drive
-kdeconnect
-thunderbird
-gparted
-trash-cli
-usbutils
-zoxide
-EOL
-
-# Let user review and modify the package list
-nano dependencies.txt
-
-# Read the modified package list into an array
-mapfile -t packages < dependencies.txt
-
-# Install selected packages with yay
-echo "Installing selected packages..."
-yay -S --needed "${packages[@]}"
-
-systemctl enable NetworkManager
-systemctl enable bluetooth
-
-# Clean up
-rm dependencies.txt
+if systemctl list-unit-files | grep -q "NetworkManager.service"; then
+    systemctl enable NetworkManager
+fi
+if systemctl list-unit-files | grep -q "bluetooth.service"; then
+    systemctl enable bluetooth
+fi
 
 echo "Installation completed successfully! rebooting in 5"
 sleep 5 && reboot
