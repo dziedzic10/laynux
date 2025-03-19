@@ -23,3 +23,4 @@ v() {
     vim "$(zoxide query "$1")"
 }
 
+fastfetch
