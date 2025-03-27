@@ -53,6 +53,7 @@ workspaces button {
 #clock,
 #clock.date,
 #pulseaudio, 
+#custom-notification,
 #custom-power-button,
 #network, 
 #battery, 
@@ -73,8 +74,11 @@ workspaces button {
   margin-bottom: 2px;
   margin-left: 4px;
   margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+#custom-notification {
+  font-family: "CaskaydiaCove Nerd Font";
 }
 
 #idle_inhibitor {
