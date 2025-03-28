@@ -37,7 +37,6 @@
   },
   "widgets": [
     "menubar#label",
-    "buttons-grid",
     "backlight",
     "volume",
     "mpris",
@@ -67,11 +66,6 @@
       "device": "intel_backlight",
       "min": 10
     },
-    "backlight#KB": {
-      "label": " ",
-      "device": "asus::kbd_backlight",
-      "subsystem": "leds"
-    },
     "volume": {
       "label": ""
     },
@@ -81,19 +75,27 @@
         "position": "right",
         "actions": [ 
           {
-            "label": "  Reboot",
+            "label": "Reboot",
             "command": "systemctl reboot"
           },
           {
-            "label": "  Lock",
-            "command": "swaylock -f --image ~/.config/wallpapers/snow_woods.jpg"
+            "label": "Lock",
+            "command": "loginctl lock-session"
           },
           {
-            "label": "  Logout",
-            "command": "swaymsg exit"
+            "label": "Logout",
+            "command": "loginctl terminate-user $USER"
           },
           {
-            "label": "  Shut down",
+            "label": "Hibernate",
+            "command": "systemctl hibernate"
+          },
+          {
+            "label": "Suspend",
+            "command": "systemctl suspend"
+          },
+          {
+            "label": "Shut down",
             "command": "systemctl poweroff"
           }
         ]
@@ -115,28 +117,7 @@
             "command": "powerprofilesctl set power-saver"
           }
         ]
-      },
-      "buttons#topbar-buttons": {
-        "position": "left",
-        "actions": [
-          {
-            "label": "",
-            "command": "grim"
-          }
-        ]
       }
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": "",
-          "command": "~/.config/rofi/rofi-wifi-menu.sh"
-        },
-        {
-          "label": "",
-          "command": "~/.config/rofi/rofi-bluetooth"
-        }
-      ]
     }
   }
 }
