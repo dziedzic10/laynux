@@ -2,11 +2,6 @@
 # ~/.bashrc
 #
 
-fastfetch
-eval "$(zoxide init bash)" 
-export EDITOR=vim
-eval "$(starship init bash)"
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -37,3 +32,9 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+fastfetch
+export EDITOR=vim
+eval "$(starship init bash)"
+eval "$(zoxide init bash)" 
+
