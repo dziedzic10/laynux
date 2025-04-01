@@ -27,11 +27,7 @@ $time\
 
 palette = "catppuccin_mocha"
 command_timeout = 5000
-# add_newline = true
-[line_break]
-disabled = false
 
-palette = "catppuccin_mocha"
 [username]
 show_always = true
 style_user = "bg:surface0 fg:text"
