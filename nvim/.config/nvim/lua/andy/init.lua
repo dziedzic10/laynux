@@ -1,4 +1,3 @@
-print("hello from andy")
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.cmd("syntax on")
