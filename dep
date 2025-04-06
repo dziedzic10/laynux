@@ -6,8 +6,11 @@ hyprpaper
 hyprshot
 hyprpolkitagent
 
+linux-lts
+linux-lts-headers
+
 ttf-font-awesome
-ttf-cascadia-code-nerd
+ttf-hack-nerd
 catppuccin-gtk-theme-mocha
 nwg-look
 

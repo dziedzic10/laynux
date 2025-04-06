@@ -22,7 +22,7 @@ else
 fi
 
 mv ~/laynux ~/dotfiles
-rm .bashrc
+mv ~/.bashrc ~/.bashrc.bak
 yay -Rns dunst
 yay -Syu stow --noconfirm
 stow $(find . -maxdepth 1 -type d -not -name "." | sed 's|^\./||')
@@ -31,13 +31,8 @@ mapfile -t packages < dep
 
 yay -S --noconfirm --needed "${packages[@]}"
 
-systemctl enable lemurs
-if systemctl list-unit-files | grep -q "NetworkManager.service"; then
-    systemctl enable NetworkManager
-fi
-if systemctl list-unit-files | grep -q "bluetooth.service"; then
-    systemctl enable bluetooth
-fi
+systemctl enable lemurs NetworkManager bluetooth
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "Installation completed successfully! rebooting in 5"
 sleep 5 && reboot
