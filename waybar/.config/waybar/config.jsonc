@@ -1,5 +1,5 @@
 {
-  "position": "top",
+  "position": "bottom",
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["group/hardware", "group/system", "tray", "custom/notification"],
