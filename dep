@@ -11,6 +11,15 @@ ttf-cascadia-code-nerd
 catppuccin-gtk-theme-mocha
 nwg-look
 
+tailscale
+lemurs
+fastfetch
+firefox
+kitty
+dolphin
+zoxide
+wofi
+swaync
 spotify
 gwenview
 btop
@@ -18,6 +27,7 @@ waybar
 pavucontrol
 brightnessctl
 bluez
+rsync
 networkmanager
 blueman
 network-manager-applet

@@ -21,6 +21,9 @@ else
     echo "yay is already installed."
 fi
 
+mv ~/laynux ~/dotfiles
+rm .bashrc
+yay -Rns dunst
 yay -Syu stow --noconfirm
 stow $(find . -maxdepth 1 -type d -not -name "." | sed 's|^\./||')
 
@@ -28,6 +31,7 @@ mapfile -t packages < dep
 
 yay -S --noconfirm --needed "${packages[@]}"
 
+systemctl enable lemurs
 if systemctl list-unit-files | grep -q "NetworkManager.service"; then
     systemctl enable NetworkManager
 fi
