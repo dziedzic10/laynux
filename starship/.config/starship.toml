@@ -4,10 +4,10 @@ $python\
 $username\
 [](bg:surface1 fg:surface0)\
 $directory\
-[](fg:surface1 bg:overlay1)\
+[](fg:surface1 bg:green)\
 $git_branch\
 $git_status\
-[](fg:overlay1 bg:sapphire)\
+[](fg:green bg:sapphire)\
 $c\
 $elixir\
 $elm\
@@ -18,9 +18,9 @@ $julia\
 $nodejs\
 $nim\
 $rust\
-[](fg:sapphire bg:teal)\
+[](fg:sapphire bg:maroon)\
 $docker_context\
-[](fg:teal bg:blue)\
+[](fg:maroon bg:blue)\
 $time\
 [ ](fg:blue)\
 \n$character"""
@@ -68,11 +68,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:overlay1 fg:base"
+style = "bg:green fg:base"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:overlay1 fg:base"
+style = "bg:green fg:base"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]

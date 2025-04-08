@@ -31,7 +31,7 @@ mapfile -t packages < dep
 
 yay -S --noconfirm --needed "${packages[@]}"
 
-systemctl enable lemurs NetworkManager bluetooth
+systemctl enable ly NetworkManager bluetooth
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "Installation completed successfully! rebooting in 5"
