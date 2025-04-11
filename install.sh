@@ -1,11 +1,7 @@
 #!/bin/bash
 
 # Update system
-sudo pacman -Syu --noconfirm
-
-# Install base dependencies
-echo "Installing base dependencies..."
-sudo pacman -S --needed git base-devel #needed??
+sudo pacman -Syu --noconfirm base-devel
 
 # Install yay (AUR helper) if not installed
 if ! command -v yay &> /dev/null; then
