@@ -24,7 +24,7 @@ mapfile -t packages < dep
 
 yay -S --noconfirm --needed "${packages[@]}"
 
-systemctl enable tailscaled bluetooth
+systemctl enable tailscaled bluetooth waydroid-container
 
 echo "Installation completed successfully! rebooting in 5"
 sleep 5 && reboot
