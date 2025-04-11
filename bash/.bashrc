@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias updategrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias v='nvim'
 alias vim='nvim'
 alias p='python learn.py'

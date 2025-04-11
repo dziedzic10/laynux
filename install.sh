@@ -24,6 +24,11 @@ mapfile -t packages < dep
 
 yay -S --noconfirm --needed "${packages[@]}"
 
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+nvim --headless +"luafile ~/.config/nvim/lua/andy/packer.lua" +PackerSync +qa
+
 systemctl enable tailscaled bluetooth waydroid-container
 
 echo "Installation completed successfully! rebooting in 5"
