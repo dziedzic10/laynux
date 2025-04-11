@@ -16,7 +16,7 @@ else
 fi
 
 rm ~/.bashrc ~/.config/hypr/hyprland.conf
-yay -Rns dunst
+yay -Rns dunst nano
 yay -Syu stow --noconfirm
 stow $(find . -maxdepth 1 -type d -not -name "." | sed 's|^\./||')
 
