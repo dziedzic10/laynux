@@ -18,7 +18,7 @@ fi
 rm ~/.bashrc ~/.config/hypr/hyprland.conf
 yay -Rns dunst nano
 yay -Syu stow --noconfirm
-stow $(find . -maxdepth 1 -type d -not -name "." | sed 's|^\./||')
+stow $(find . -maxdepth 1 -type d -not -name ".*" -not -name "." | sed 's|^\./||')
 
 mapfile -t packages < dep
 
