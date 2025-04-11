@@ -6,17 +6,14 @@ hyprpaper
 hyprshot
 hyprpolkitagent
 
-linux-lts
-linux-lts-headers
-
 ttf-font-awesome
 ttf-hack-nerd
 catppuccin-gtk-theme-mocha
 nwg-look
 
 tailscale
-nvim-packer-git
-ly
+bolt
+usbutils
 fastfetch
 firefox
 kitty
@@ -32,11 +29,9 @@ pavucontrol
 brightnessctl
 bluez
 rsync
-networkmanager
 blueman
 network-manager-applet
 wlogout
-dunst
 clipse
 synology-drive
 kdeconnect
@@ -54,3 +49,4 @@ imagemagick
 yazi
 starship
 nvim
+nvim-packer-git

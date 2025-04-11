@@ -1,13 +1,11 @@
 #!/bin/bash
 
-set -e
-
 # Update system
 sudo pacman -Syu --noconfirm
 
 # Install base dependencies
 echo "Installing base dependencies..."
-sudo pacman -S --needed git base-devel
+sudo pacman -S --needed git base-devel #needed??
 
 # Install yay (AUR helper) if not installed
 if ! command -v yay &> /dev/null; then
@@ -21,8 +19,7 @@ else
     echo "yay is already installed."
 fi
 
-mv ~/laynux ~/dotfiles
-mv ~/.bashrc ~/.bashrc.bak
+rm ~/.bashrc ~/.config/hypr/hyprland.conf
 yay -Rns dunst
 yay -Syu stow --noconfirm
 stow $(find . -maxdepth 1 -type d -not -name "." | sed 's|^\./||')
@@ -31,8 +28,7 @@ mapfile -t packages < dep
 
 yay -S --noconfirm --needed "${packages[@]}"
 
-systemctl enable ly NetworkManager bluetooth
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+systemctl enable tailscaled bluetooth
 
 echo "Installation completed successfully! rebooting in 5"
 sleep 5 && reboot
