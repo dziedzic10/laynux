@@ -29,6 +29,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 
 nvim --headless +"luafile ~/.config/nvim/lua/andy/packer.lua" +PackerSync +qa
 
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 systemctl enable tailscaled bluetooth waydroid-container
 
 echo "Installation completed successfully! rebooting in 5"
