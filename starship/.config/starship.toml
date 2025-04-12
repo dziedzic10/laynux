@@ -4,10 +4,10 @@ $python\
 $username\
 [](bg:surface1 fg:surface0)\
 $directory\
-[](fg:surface1 bg:green)\
+[](fg:surface1 bg:maroon)\
 $git_branch\
 $git_status\
-[](fg:green bg:sapphire)\
+[](fg:maroon bg:sapphire)\
 $c\
 $elixir\
 $elm\
@@ -68,11 +68,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:green fg:base"
+style = "bg:maroon fg:base"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:green fg:base"
+style = "bg:maroon fg:base"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
