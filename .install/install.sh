@@ -26,5 +26,5 @@ nvim --headless +"luafile ~/.config/nvim/lua/andy/packer.lua" +PackerSync +qa
 sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 systemctl enable cronie tailscaled bluetooth waydroid-container
 
-echo "Installation completed, rebooting in 5"
-sleep 5 && reboot
+echo "Installation completed, rebooting"
+sleep 1 && reboot

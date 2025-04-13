@@ -27,7 +27,7 @@ function y() {
 }
 
 fastfetch
-export EDITOR=vim
+export EDITOR=nvim
 eval "$(starship init bash)"
 eval "$(zoxide init bash)" 
 
