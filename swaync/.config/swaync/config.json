@@ -104,17 +104,17 @@
         "label": "", 
         "position": "left",
         "actions": [ 
-          {
+	  {
             "label": "Performance",
-            "command": "powerprofilesctl set performance"
-          },
+            "command": "sh -c '/home/andydz/.scripts/power_profile.sh performance'"
+   	  },
           {
             "label": "Balanced",
-            "command": "powerprofilesctl set balanced"
+            "command": "sh -c '/home/andydz/.scripts/power_profile.sh balanced'"
           },
           {
             "label": "Power-saver",
-            "command": "powerprofilesctl set power-saver"
+            "command": "sh -c '/home/andydz/.scripts/power_profile.sh power-saver'"
           }
         ]
       }
