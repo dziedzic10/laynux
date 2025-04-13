@@ -13,6 +13,7 @@ nwg-look
 
 tailscale
 waydroid
+cronie
 bolt
 usbutils
 fastfetch
@@ -46,8 +47,9 @@ poppler
 fd
 fzf
 imagemagick
-7zip
 yazi
+zip
+unzip
 starship
 nvim
 nvim-packer-git

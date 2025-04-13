@@ -16,8 +16,9 @@
   "sort-by-number": true
 },
   "clock": {
-    "format": "{:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "{:%a %d %H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 1
   },
   "battery": {
     "states": {
