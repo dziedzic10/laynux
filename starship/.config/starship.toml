@@ -2,9 +2,9 @@ format = """
 [](surface1)\
 $python\
 $username\
-[](fg:surface1 bg:surface0)\
+[](fg:surface1 bg:blue)\
 $time\
-[](fg:surface0 bg:surface1)\
+[](fg:blue bg:surface1)\
 $directory\
 [](fg:surface1 bg:blue)\
 $git_branch\
@@ -48,7 +48,7 @@ truncation_symbol = "…/"
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:surface0 fg:text"
+style = "bg:blue fg:base"
 format = '[ $time ]($style)'
 
 
