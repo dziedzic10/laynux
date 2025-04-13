@@ -1,13 +1,14 @@
 format = """
-[](surface0)\
+[](surface1)\
 $python\
 $username\
-[](bg:surface1 fg:surface0)\
+[](fg:surface1 bg:surface0)\
+$time\
+[](fg:surface0 bg:surface1)\
 $directory\
-[](fg:surface1 bg:maroon)\
+[](fg:surface1 bg:blue)\
 $git_branch\
 $git_status\
-[](fg:maroon bg:sapphire)\
 $c\
 $elixir\
 $elm\
@@ -18,11 +19,9 @@ $julia\
 $nodejs\
 $nim\
 $rust\
-[](fg:sapphire bg:maroon)\
 $docker_context\
-[](fg:maroon bg:blue)\
-$time\
-[ ](fg:blue)\
+[](fg:blue bg:blue)\
+[](fg:blue)\
 \n$character"""
 
 palette = "catppuccin_mocha"
@@ -30,8 +29,8 @@ command_timeout = 5000
 
 [username]
 show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:red"
+style_user = "bg:surface1 fg:text"
+style_root = "bg:surface1 fg:red"
 format = '[$user ]($style)'
 
 [directory]
@@ -46,9 +45,16 @@ truncation_symbol = "…/"
 "Music" = " "
 "Pictures" = " "
 
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:surface0 fg:text"
+format = '[ $time ]($style)'
+
+
 [c]
 symbol = " "
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [docker_context]
@@ -58,51 +64,51 @@ format = '[ $symbol $context ]($style)$path'
 
 [elixir]
 symbol = " "
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [elm]
 symbol = " "
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bg:maroon fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:maroon fg:base"
+style = "bg:blue fg:base"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [haskell]
 symbol = " "
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [julia]
 symbol = " "
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [nim]
 symbol = " "
-style = "bg:sapphire fg:base"
+style = "bg:blue fg:base"
 format = '[ $symbol ($version) ]($style)'
 
 [python]
@@ -111,14 +117,8 @@ format = '[(\($virtualenv\) )]($style)'
 
 [rust]
 symbol = ""
-style = "bg:sapphire fg:base"
-format = '[ $symbol ($version) ]($style)'
-
-[time]
-disabled = false
-time_format = "%R"
 style = "bg:blue fg:base"
-format = '[ $time ]($style)'
+format = '[ $symbol ($version) ]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
