@@ -3,6 +3,7 @@ vim.opt.relativenumber = true
 vim.cmd("syntax on")
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
+vim.keymap.set({'n', 'v'}, '<C-c>', '"+y', { noremap = true })
 require("catppuccin").setup({
   flavour = "mocha",
   transparent_background = true,
