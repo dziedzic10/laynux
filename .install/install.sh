@@ -31,7 +31,7 @@ systemctl enable cronie tailscaled bluetooth
 sudo sed -i '/^GRUB_THEME=/d' /etc/default/grub 
 echo 'GRUB_THEME="/usr/share/grub/themes/Xenlism-Arch/theme.txt"' | sudo tee -a /etc/default/grub
 sudo sed -i '/^GRUB_TIMEOUT/d' /etc/default/grub
-echo 'GRUB_TIMEOUT=5' | sudo tee -a /etc/default/grub
+echo 'GRUB_TIMEOUT=1' | sudo tee -a /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "Installation completed, rebooting"
