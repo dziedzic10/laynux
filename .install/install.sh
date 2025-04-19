@@ -14,6 +14,7 @@ yay -Rns dunst nano
 yay -Syu stow --noconfirm
 cd ~/laynux
 stow */
+sudo stow -t /etc .ly
 
 mapfile -t packages < dep
 
