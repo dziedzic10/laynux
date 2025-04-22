@@ -3994,3 +3994,6 @@
 
 2025/04/16 (19:34:05) | ===> btop++ v.1.4.0
 2025/04/16 (19:34:05) | WARNING: Intel GPU: Failed to initialize PMU
+
+2025/04/21 (20:12:13) | ===> btop++ v.1.4.0
+2025/04/21 (20:12:13) | WARNING: Intel GPU: Failed to initialize PMU
