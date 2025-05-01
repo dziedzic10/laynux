@@ -26,7 +26,8 @@ nvim --headless +"luafile ~/.config/nvim/lua/andy/packer.lua" +PackerSync +qa
 
 sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 crontab ~/laynux/.install/cron
-systemctl enable cronie tailscaled bluetooth 
+sudo systemctl enable cronie tailscaled bluetooth 
+sudo ufw enable
 
 sudo sed -i '/^GRUB_THEME=/d' /etc/default/grub 
 echo 'GRUB_THEME="/usr/share/grub/themes/Xenlism-Arch/theme.txt"' | sudo tee -a /etc/default/grub
