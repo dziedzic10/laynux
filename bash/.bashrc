@@ -12,6 +12,7 @@ alias sv='sudo nvim'
 alias p='python learn.py'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias exit_node='$HOME/.scripts/tailscale_set_exit_node.sh'
 PS1='[\u@\h \W]\$ '
 
 ### TRASH-CLI
