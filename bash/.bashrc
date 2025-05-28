@@ -13,10 +13,9 @@ alias p='python learn.py'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias t='$HOME/.scripts/tailscale.sh'
-PS1='[\u@\h \W]\$ '
-
-### TRASH-CLI
 alias d='trash-put'
+
+PS1='[\u@\h \W]\$ '
 
 ### YAZI
 function y() {
@@ -30,6 +29,7 @@ function y() {
 
 fastfetch
 export EDITOR=nvim
+export VISUAL=nvim
 eval "$(starship init bash)"
 eval "$(zoxide init bash)" 
 
