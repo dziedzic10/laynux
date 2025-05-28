@@ -13,6 +13,7 @@ alias p='python learn.py'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias t='$HOME/.scripts/tailscale.sh'
+alias u='cd $HOME/laynux/.install && ./update.sh'
 alias d='trash-put'
 
 PS1='[\u@\h \W]\$ '
