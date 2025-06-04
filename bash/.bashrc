@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 source ~/Documents/scripts-configs/bashrcex
+
 alias updategrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias upgradegrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias v='nvim'
