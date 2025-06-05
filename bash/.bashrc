@@ -37,6 +37,9 @@ function y() {
 }
 
 fastfetch
+alias
+echo "update -a $HOME/Documents/scripts-configs/update_servers.sh"
+  
 export EDITOR=nvim
 export VISUAL=nvim
 eval "$(starship init bash)"
