@@ -16,7 +16,7 @@ alias p='python learn.py'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias t='$HOME/.scripts/tailscale.sh'
-alias gitu='cd $HOME/laynux/.install && ./update.sh'
+alias gitu='cd $HOME/laynux/.install && ./update.sh && cd ~'
 alias d='trash-put'
 alias clip='wl-copy <'
 update() {
