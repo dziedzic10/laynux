@@ -26,7 +26,7 @@
       "critical": 10
     },
     "format": "{icon}   {capacity}%",
-    "interval": 1,
+    "interval": 2,
     "format-warning": "<span size='13000' foreground='#e06a21'>{icon}  {capacity}%</span>",
     "format-critical": "<span size='13000' foreground='#fc494f'>{icon}  {capacity}%</span>",
     "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",

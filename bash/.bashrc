@@ -36,7 +36,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-fastfetch
+#fastfetch
 alias
 echo "update -a $HOME/Documents/scripts-configs/update_servers.sh"
   

@@ -3,6 +3,8 @@
 EXIT_NODE=$(tailscale exit-node suggest | sed -n 's/Suggested exit node: \(.*\)\./\1/p')
 echo "Suggested exit node: $EXIT_NODE"
 
+sudo tailscale down
+
 read -p "Do you want to set best exit node? (N/y) " exit_node 
 
 if [[ "$exit_node" =~ ^[Yy]$ ]]; then
