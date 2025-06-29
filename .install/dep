@@ -54,3 +54,4 @@ unzip
 starship
 nvim
 nvim-packer-git
+net-tools

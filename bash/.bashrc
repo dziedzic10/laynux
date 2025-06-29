@@ -14,6 +14,8 @@ alias vim='nvim'
 alias sv='sudo nvim'
 alias p='python learn.py'
 alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -la'
 alias grep='grep --color=auto'
 alias t='$HOME/.scripts/tailscale.sh'
 alias gitu='cd $HOME/laynux/.install && ./update.sh && cd ~'
@@ -44,4 +46,5 @@ export EDITOR=nvim
 export VISUAL=nvim
 eval "$(starship init bash)"
 eval "$(zoxide init bash)" 
+export LIBVIRT_DEFAULT_URI='qemu:///system'
 

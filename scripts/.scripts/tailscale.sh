@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo tailscale up
+
 EXIT_NODE=$(tailscale exit-node suggest | sed -n 's/Suggested exit node: \(.*\)\./\1/p')
 echo "Suggested exit node: $EXIT_NODE"
 
