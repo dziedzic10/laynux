@@ -47,4 +47,3 @@ export VISUAL=nvim
 eval "$(starship init bash)"
 eval "$(zoxide init bash)" 
 export LIBVIRT_DEFAULT_URI='qemu:///system'
-
