@@ -38,6 +38,18 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+### OPENVPN
+vpn() {
+    if systemctl is-active --quiet openvpn-client@nolimit; then
+        echo "Stopping VPN..."
+        sudo systemctl stop openvpn-client@nolimit
+    else
+        echo "Starting VPN..."
+        sudo systemctl start openvpn-client@nolimit
+    fi
+}
+
+
 #fastfetch
 alias
 echo "update -a $HOME/Documents/scripts-configs/update_servers.sh"
