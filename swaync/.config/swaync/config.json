@@ -101,7 +101,7 @@
         ]
       },
       "menu#powermode-buttons": {
-        "label": "", 
+        "label": "󰾅", 
         "position": "left",
         "actions": [ 
 	  {

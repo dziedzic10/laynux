@@ -24,13 +24,13 @@
       "warning": 20,
       "critical": 10
     },
-    "format": "{icon}   {capacity}%",
+    "format": "{icon} {capacity}%",
     "interval": 2,
     "format-warning": "<span size='13000' foreground='#e06a21'>{icon}  {capacity}%</span>",
     "format-critical": "<span size='13000' foreground='#fc494f'>{icon}  {capacity}%</span>",
     "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-alt": "{icon}   {time}",
+    "format-alt": "{icon} {time}",
     "format-icons": ["", "", "", "", ""],
     "tooltip-format": "{time}"
   },
@@ -44,15 +44,15 @@
     "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
-      "format": "  {icon}  {volume}%",
-      "format-muted": "",
+      "format": "{icon} {volume}%",
+      "format-muted": "",
       "format-icons": {
-          "default": ["", "", " "]
+          "default": ["", "", ""]
       },
       "on-click": "pavucontrol"
   },
   "backlight": {
-    "format": "   {percent}%",
+    "format": " {percent}%",
     "on-scroll-up": "brightnessctl set +1%",
     "on-scroll-down": "brightnessctl set 1%-",
     "on-click": "brightnessctl set +1%",
