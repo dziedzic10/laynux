@@ -1,28 +1,96 @@
 {
   "position": "bottom",
-  "modules-left": ["hyprland/workspaces", "custom/agent-usage"],
-  "modules-center": ["clock"],
-  "modules-right": ["group/hardware", "group/system", "tray", "custom/notification"],
-"hyprland/workspaces": {
-  "format": "{icon}",
-  "on-click": "activate",
-  "format-icons": {
-    "1": "",
-    "2": "",
-    "3": "󰠮",
-    "4": ""
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/spacer",
+    "custom/agent-usage"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "group/hardware",
+    "group/system",
+    "tray",
+    "custom/notification"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰠮",
+      "4": ""
+    },
+    "sort-by-number": true
   },
-  "sort-by-number": true
-},
-"custom/agent-usage": {
+  "custom/spacer": {
+    "format": " ",
+    "tooltip": false
+  },
+  "custom/agent-usage": {
     "exec": "~/go/bin/agent-usage status --format waybar",
     "return-type": "json",
     "interval": 60
-},
+  },
   "clock": {
     "format": "{:%a %d %H:%M:%S}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "interval": 1
+  },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory",
+      "disk"
+    ]
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "{:.0f}% ",
+    "max-length": 10,
+    "on-click": "kitty --class floating-term -e btop"
+  },
+  "memory": {
+    "interval": 10,
+    "format": "{}% ",
+    "max-length": 10,
+    "on-click": "kitty --class floating-term -e btop"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "{percentage_used}% ",
+    "path": "/",
+    "on-click": "kitty --class floating-term -e btop"
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "backlight",
+      "battery"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "backlight": {
+    "format": " {percent}%",
+    "on-scroll-up": "brightnessctl set +1%",
+    "on-scroll-down": "brightnessctl set 1%-",
+    "on-click": "brightnessctl set +1%",
+    "on-click-right": "brightnessctl set 1%-"
   },
   "battery": {
     "states": {
@@ -36,7 +104,13 @@
     "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
     "format-alt": "{icon} {time}",
-    "format-icons": ["", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "tooltip-format": "{time}"
   },
   "network": {
@@ -48,72 +122,18 @@
     "tooltip-format-wifi": "{ifname}:{ipaddr}/{cidr} via {gwaddr} Signal: {signalStrength}%",
     "on-click": "nm-connection-editor"
   },
-  "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-muted": "",
-      "format-icons": {
-          "default": ["", "", ""]
-      },
-      "on-click": "pavucontrol"
-  },
-  "backlight": {
-    "format": " {percent}%",
-    "on-scroll-up": "brightnessctl set +1%",
-    "on-scroll-down": "brightnessctl set 1%-",
-    "on-click": "brightnessctl set +1%",
-    "on-click-right": "brightnessctl set 1%-"
+  "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    "format": "<span size='13000' foreground='#89b4fa'> </span>{status}",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections} connected",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
   "tray": {
     "icon-size": 21,
     "spacing": 10
-  },
-  "group/system": {
-    "modules": [
-      "pulseaudio",
-      "backlight",
-      "battery"
-    ],
-    "orientation": "horizontal"
-  },
-  "group/hardware": {
-    "modules": [
-      "cpu",
-      "memory",
-      "disk"
-    ],
-    "orientation": "horizontal"
-  },
-  "cpu": {
-    "interval": 10,
-    "format": "{:.0f}% ",
-    "max-length": 10,
-    "on-click": "kitty --class floating-term -e btop"
-  },
-  "disk": {
-    "interval": 30,
-    "format": "{percentage_used}% ",
-    "path": "/",
-    "on-click": "kitty --class floating-term -e btop"
-  },
-  "memory": {
-    "interval": 10,
-    "format": "{}% ",
-    "max-length": 10,
-    "on-click": "kitty --class floating-term -e btop"
-  },
-  "bluetooth": {
-	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-	"format": "<span size='13000' foreground='#89b4fa'> </span>{status}",
-	"format-disabled": "", // an empty format will hide the module
-	"format-connected": " {num_connections} connected",
-	"tooltip-format": "{controller_alias}\t{controller_address}",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
-  },
-  "custom/power-button": {
-    "format": "   ",
-    "on-click": "wlogout",
-    "tooltip": false
   },
   "custom/notification": {
     "tooltip": false,
@@ -134,5 +154,10 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "custom/power-button": {
+    "format": "   ",
+    "on-click": "wlogout",
+    "tooltip": false
   }
 }

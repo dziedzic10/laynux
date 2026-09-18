@@ -80,6 +80,12 @@ workspaces button {
   font-family: "CaskaydiaCove Nerd Font";
 }
 
+#custom-spacer {
+  margin: 0;
+  padding: 0;
+  min-width: 300px;
+}
+
 #idle_inhibitor {
     margin-right: 12px;
     color: #7cb342;

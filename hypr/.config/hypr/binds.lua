@@ -2,7 +2,6 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
---hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("obsidian --force-device-scale-factor=2"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("teams --force-device-scale-factor=2"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
@@ -17,7 +16,7 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(terminal .. " --class clipse -e 'clip
 -- hl.bind(mainMod .. " + SHIFT + HOME", hl.dsp.exec_cmd("~/.scripts/toggle_samsung.sh"), { release = true })
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.scripts/wallpaper.sh"))
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("kitty --class floating-term -e btop"))
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("spotify"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("spotify --force-device-scale-factor=2"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("~/.scripts/waybar_reload.sh"))
