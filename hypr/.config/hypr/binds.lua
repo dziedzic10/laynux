@@ -2,8 +2,9 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
+--hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("obsidian --force-device-scale-factor=2"))
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("teams --force-device-scale-factor=1"))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("teams --force-device-scale-factor=2"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("claude-desktop"))

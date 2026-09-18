@@ -60,3 +60,4 @@ eval "$(starship init bash)"
 eval "$(zoxide init bash)" 
 export LIBVIRT_DEFAULT_URI='qemu:///system'
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"

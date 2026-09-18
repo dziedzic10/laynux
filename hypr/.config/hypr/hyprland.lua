@@ -6,7 +6,7 @@ local colors = require("mocha")
 ------------------
 
 hl.monitor({ output = "desc:Iiyama North America PL2770Q 1239851620174", mode = "2560x1440@144.00", position = "-2560x0", scale = "auto" })
-hl.monitor({ output = "desc:AU Optronics 0x60A3", mode = "preferred", position = "0x0", scale = 2 })
+hl.monitor({ output = "desc:AU Optronics 0x60A3", mode = "preferred", position = "0x0", scale = 1.5 })
 hl.monitor({ output = "desc:Samsung Electric Company C34J79x HNTW202213", mode = "3440x1440@99.98", position = "auto", scale = 1.25 })
 hl.monitor({ output = "desc:Synaptics Inc Non-PnP 0x00BC614", mode = "1920x1080@60.00", position = "auto", scale = 1 })
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = "auto" })
@@ -31,7 +31,7 @@ menu = "wofi --show drun"
 hl.on("hyprland.start", function()
     hl.exec_cmd("brave --password-store=basic", { workspace = "1 silent" })
     hl.exec_cmd(terminal, { workspace = "2 silent" })
-    hl.exec_cmd("obsidian", { workspace = "3 silent" })
+    hl.exec_cmd("obsidian --force-device-scale-factor=1.5", { workspace = "3 silent" })
     hl.exec_cmd("nm-applet & blueman-applet & deconnect-indicator")
     hl.exec_cmd("waybar & hyprpaper")
     hl.exec_cmd("hypridle")

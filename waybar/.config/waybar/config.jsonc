@@ -1,6 +1,6 @@
 {
   "position": "bottom",
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "custom/agent-usage"],
   "modules-center": ["clock"],
   "modules-right": ["group/hardware", "group/system", "tray", "custom/notification"],
 "hyprland/workspaces": {
@@ -13,6 +13,11 @@
     "4": ""
   },
   "sort-by-number": true
+},
+"custom/agent-usage": {
+    "exec": "~/go/bin/agent-usage status --format waybar",
+    "return-type": "json",
+    "interval": 60
 },
   "clock": {
     "format": "{:%a %d %H:%M:%S}",
